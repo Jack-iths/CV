@@ -10,87 +10,85 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* Style: Tech-Forward Modern */
+        /* Style: Tech-Forward Modern (Responsive) */
         
-        /* --- VARIABLES (CUSTOMIZE COLORS HERE) --- */
+        /* --- VARIABLES --- */
         :root {
-            --bg-body: #F3F4F6;       /* Light Gray Background */
-            --bg-sidebar: #0f172a;    /* Dark Navy for high contrast */
-            --text-main: #334155;     /* Dark Slate */
-            --text-sidebar: #e2e8f0;  /* Light Gray for sidebar text */
-            --accent: #0ea5e9;        /* Sky Blue - Primary Accent */
-            --accent-dark: #0284c7;   /* Darker Blue for links */
-            --chip-bg: #e0f2fe;       /* Light Blue for skill chips */
-            --chip-text: #0369a1;     /* Dark Blue for skill text */
+            --bg-body: #F3F4F6;
+            --bg-sidebar: #0f172a;
+            --text-main: #334155;
+            --text-sidebar: #e2e8f0;
+            --accent: #0ea5e9;
+            --accent-dark: #0284c7;
+            --chip-bg: #e0f2fe;
+            --chip-text: #0369a1;
         }
 
-        /* --- RESET & BASE STYLES --- */
+        /* --- RESET --- */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            -webkit-print-color-adjust: exact; /* Ensures colors print correctly */
+            -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
         }
 
         body {
-            background-color: #555; /* Dark background for browser view only */
+            background-color: #555; /* Dark background for browser presentation */
             font-family: 'Inter', sans-serif;
-            font-size: 11px;
+            font-size: 14px; /* Slightly larger base for mobile reading */
             line-height: 1.6;
             color: var(--text-main);
             display: flex;
             justify-content: center;
-            padding: 20px;
+            padding: 0;
+            margin: 0;
         }
 
-        /* --- A4 PAGE CONTAINER --- */
+        /* --- CONTAINER --- */
         .page {
             background: white;
-            width: 210mm;
-            min-height: 297mm; /* A4 Height */
+            /* Default to Mobile Stacked View */
+            width: 100%;
+            max-width: 800px; /* Max width for desktop viewing */
+            min-height: 100vh;
             display: flex;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            flex-direction: column; /* Stack vertical by default */
             position: relative;
-            overflow: hidden; /* Clips decorative elements */
         }
 
-        /* --- LEFT COLUMN (SIDEBAR) --- */
+        /* --- SIDEBAR --- */
         aside {
-            width: 30%;
+            width: 100%; /* Full width on mobile */
             background-color: var(--bg-sidebar);
             color: var(--text-sidebar);
-            padding: 40px 25px;
+            padding: 30px 25px;
             position: relative;
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 25px;
         }
 
-        /* Decorative tech stripe on sidebar */
+        /* Tech stripe */
         aside::before {
             content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 6px;
+            top: 0; left: 0; width: 100%; height: 6px;
             background: linear-gradient(90deg, var(--accent), #6366f1);
         }
 
-        /* --- RIGHT COLUMN (MAIN) --- */
+        /* --- MAIN CONTENT --- */
         main {
-            width: 70%;
-            padding: 40px 35px;
+            width: 100%; /* Full width on mobile */
+            padding: 30px 25px;
             background-color: #ffffff;
-            position: relative;
         }
 
         /* --- TYPOGRAPHY --- */
         h1 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
-            font-size: 36px;
+            font-size: 32px;
             color: var(--text-main);
             line-height: 1.1;
             margin-bottom: 5px;
@@ -100,11 +98,11 @@
         h2 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 14px;
+            font-size: 16px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.2px;
             color: var(--accent-dark);
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -112,12 +110,9 @@
             padding-bottom: 5px;
         }
         
-        /* Tech icon before H2 */
         h2::before {
-            content: " ";
-            display: inline-block;
-            width: 6px;
-            height: 6px;
+            content: " "; display: inline-block;
+            width: 8px; height: 8px;
             background-color: var(--accent);
             border-radius: 50%;
         }
@@ -125,7 +120,7 @@
         h3 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 13px;
+            font-size: 15px;
             color: #1e293b;
             margin-top: 15px;
             margin-bottom: 2px;
@@ -141,134 +136,97 @@
             margin-bottom: 20px;
         }
 
-        p {
-            margin-bottom: 8px;
-        }
+        p { margin-bottom: 10px; }
+        a { color: var(--accent); text-decoration: none; font-weight: 600; }
+        aside a { color: #fff; opacity: 0.9; }
 
-        a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        aside a {
-            color: #fff;
-            opacity: 0.9;
-            transition: 0.2s;
-        }
-
-        /* --- SIDEBAR SECTIONS --- */
+        /* --- ELEMENTS --- */
         .contact-info div {
             margin-bottom: 12px;
-            font-size: 11px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
-
-        .contact-info svg {
-            width: 14px;
-            height: 14px;
-            fill: var(--accent);
-        }
+        .contact-info svg { width: 16px; height: 16px; fill: var(--accent); }
 
         .sidebar-section h2 {
-            color: #fff; /* White headers in sidebar */
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: #fff; border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        /* Skill Chips (Sidebar version) */
-        .skill-group {
-            margin-bottom: 15px;
-        }
+        .skill-group { margin-bottom: 20px; }
         .skill-label {
-            font-weight: 600;
-            color: var(--accent);
-            margin-bottom: 5px;
-            display: block;
-            font-size: 10px;
-            text-transform: uppercase;
+            font-weight: 600; color: var(--accent);
+            margin-bottom: 5px; display: block;
+            font-size: 11px; text-transform: uppercase;
         }
-        .skill-chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
+        .skill-chips { display: flex; flex-wrap: wrap; gap: 8px; }
         .chip {
             background: rgba(255,255,255,0.1);
-            color: #fff;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 10px;
+            color: #fff; padding: 4px 10px;
+            border-radius: 4px; font-size: 11px;
             border: 1px solid rgba(255,255,255,0.05);
         }
 
-        /* --- MAIN SECTIONS --- */
         .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
+            display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;
         }
         .date {
-            font-size: 10px;
-            color: #64748b;
-            font-weight: 600;
-            text-align: right;
-            white-space: nowrap;
+            font-size: 12px; color: #64748b; font-weight: 600; text-align: right;
         }
         
-        ul {
-            list-style: none;
-            margin-left: 0;
-        }
-        
+        ul { list-style: none; margin-left: 0; }
         li {
-            position: relative;
-            padding-left: 15px;
-            margin-bottom: 4px;
-            color: #475569;
+            position: relative; padding-left: 18px; margin-bottom: 6px; color: #475569;
         }
-
         li::before {
-            content: "›";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-            font-size: 14px;
-            line-height: 12px;
+            content: "›"; position: absolute; left: 0;
+            color: var(--accent); font-weight: bold; font-size: 16px; line-height: 14px;
         }
 
-        /* Project Chips (Main column version) */
-        .tech-stack {
-            display: flex;
-            gap: 5px;
-            margin-top: 4px;
-            margin-bottom: 8px;
-        }
+        .tech-stack { display: flex; gap: 6px; margin-top: 5px; margin-bottom: 10px; flex-wrap: wrap; }
         .tech-stack span {
-            background-color: var(--chip-bg);
-            color: var(--chip-text);
-            font-size: 9px;
-            font-weight: 600;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: 'Montserrat', sans-serif;
+            background-color: var(--chip-bg); color: var(--chip-text);
+            font-size: 10px; font-weight: 600; padding: 3px 8px;
+            border-radius: 4px; font-family: 'Montserrat', sans-serif;
         }
 
-        /* --- PRINT MEDIA QUERY --- */
+        /* --- DESKTOP VIEW (Simulating A4 on large screens) --- */
+        @media screen and (min-width: 850px) {
+            body { padding: 40px; }
+            .page {
+                width: 210mm;
+                min-height: 297mm;
+                flex-direction: row; /* Side by side */
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            }
+            aside { width: 30%; padding: 40px 25px; }
+            main { width: 70%; padding: 40px 35px; }
+            body { font-size: 11px; } /* Smaller text for A4 density */
+            h1 { font-size: 36px; }
+            h2 { font-size: 14px; }
+            .date { font-size: 10px; }
+            .chip { font-size: 10px; }
+        }
+
+        /* --- PRINT VIEW (Strict A4 Layout) --- */
         @media print {
-            body {
-                background: none;
-                padding: 0;
-                display: block;
+            body { 
+                background: none; padding: 0; 
+                font-size: 11px; /* Force print size */
             }
             .page {
-                width: 100%;
-                height: auto;
+                width: 210mm;
+                min-height: 297mm;
+                display: flex !important;
+                flex-direction: row !important; /* Force side-by-side */
                 box-shadow: none;
                 margin: 0;
             }
+            aside { width: 30%; padding: 40px 25px; }
+            main { width: 70%; padding: 40px 35px; }
+            
+            /* Hide URL links in print if desirable, generally fine to leave as is */
+            a { text-decoration: none; }
         }
     </style>
 </head>
