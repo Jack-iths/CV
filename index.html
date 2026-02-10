@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jack Revenue - Resume</title>
+    <title>Jack Revenue - CV</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* Style: Tech-Forward Modern (Responsive) */
-        
         /* --- VARIABLES --- */
         :root {
             --bg-body: #F3F4F6;
@@ -34,9 +32,9 @@
         }
 
         body {
-            background-color: #555; /* Dark background for browser presentation */
+            background-color: #555;
             font-family: 'Inter', sans-serif;
-            font-size: 14px; /* Slightly larger base for mobile reading */
+            font-size: 14px;
             line-height: 1.6;
             color: var(--text-main);
             display: flex;
@@ -45,21 +43,18 @@
             margin: 0;
         }
 
-        /* --- CONTAINER --- */
         .page {
             background: white;
-            /* Default to Mobile Stacked View */
             width: 100%;
-            max-width: 800px; /* Max width for desktop viewing */
+            max-width: 800px;
             min-height: 100vh;
             display: flex;
-            flex-direction: column; /* Stack vertical by default */
+            flex-direction: column;
             position: relative;
         }
 
-        /* --- SIDEBAR --- */
         aside {
-            width: 100%; /* Full width on mobile */
+            width: 100%;
             background-color: var(--bg-sidebar);
             color: var(--text-sidebar);
             padding: 30px 25px;
@@ -69,7 +64,6 @@
             gap: 25px;
         }
 
-        /* Tech stripe */
         aside::before {
             content: "";
             position: absolute;
@@ -77,14 +71,12 @@
             background: linear-gradient(90deg, var(--accent), #6366f1);
         }
 
-        /* --- MAIN CONTENT --- */
         main {
-            width: 100%; /* Full width on mobile */
+            width: 100%;
             padding: 30px 25px;
             background-color: #ffffff;
         }
 
-        /* --- TYPOGRAPHY --- */
         h1 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
@@ -108,6 +100,7 @@
             gap: 8px;
             border-bottom: 2px solid #f1f5f9;
             padding-bottom: 5px;
+            margin-top: 25px;
         }
         
         h2::before {
@@ -140,7 +133,6 @@
         a { color: var(--accent); text-decoration: none; font-weight: 600; }
         aside a { color: #fff; opacity: 0.9; }
 
-        /* --- ELEMENTS --- */
         .contact-info div {
             margin-bottom: 12px;
             display: flex;
@@ -151,6 +143,7 @@
 
         .sidebar-section h2 {
             color: #fff; border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-top: 0;
         }
 
         .skill-group { margin-bottom: 20px; }
@@ -190,42 +183,28 @@
             border-radius: 4px; font-family: 'Montserrat', sans-serif;
         }
 
-        /* --- DESKTOP VIEW (Simulating A4 on large screens) --- */
         @media screen and (min-width: 850px) {
             body { padding: 40px; }
             .page {
                 width: 210mm;
                 min-height: 297mm;
-                flex-direction: row; /* Side by side */
+                flex-direction: row;
                 box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             }
             aside { width: 30%; padding: 40px 25px; }
             main { width: 70%; padding: 40px 35px; }
-            body { font-size: 11px; } /* Smaller text for A4 density */
+            body { font-size: 11px; }
             h1 { font-size: 36px; }
             h2 { font-size: 14px; }
             .date { font-size: 10px; }
             .chip { font-size: 10px; }
         }
 
-        /* --- PRINT VIEW (Strict A4 Layout) --- */
         @media print {
-            body { 
-                background: none; padding: 0; 
-                font-size: 11px; /* Force print size */
-            }
-            .page {
-                width: 210mm;
-                min-height: 297mm;
-                display: flex !important;
-                flex-direction: row !important; /* Force side-by-side */
-                box-shadow: none;
-                margin: 0;
-            }
+            body { background: none; padding: 0; font-size: 11px; }
+            .page { width: 210mm; min-height: 297mm; display: flex !important; flex-direction: row !important; box-shadow: none; margin: 0; }
             aside { width: 30%; padding: 40px 25px; }
             main { width: 70%; padding: 40px 35px; }
-            
-            /* Hide URL links in print if desirable, generally fine to leave as is */
             a { text-decoration: none; }
         }
     </style>
@@ -246,7 +225,7 @@
                     </div>
                     <div>
                         <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                        Gothenburg, Sweden
+                        Göteborg
                     </div>
                 </div>
 
@@ -265,10 +244,10 @@
             </div>
 
             <div class="sidebar-section">
-                <h2>Technical Skills</h2>
+                <h2>Tekniska Färdigheter</h2>
                 
                 <div class="skill-group">
-                    <span class="skill-label">Languages & Data</span>
+                    <span class="skill-label">Språk & Data</span>
                     <div class="skill-chips">
                         <span class="chip">C#</span>
                         <span class="chip">SQL</span>
@@ -279,41 +258,40 @@
                 </div>
 
                 <div class="skill-group">
-                    <span class="skill-label">Frameworks & Concepts</span>
+                    <span class="skill-label">Ramverk & Koncept</span>
                     <div class="skill-chips">
                         <span class="chip">.NET Core</span>
                         <span class="chip">ASP.NET</span>
                         <span class="chip">REST APIs</span>
                         <span class="chip">Entity Framework</span>
-                        <span class="chip">WPF</span>
-                        <span class="chip">XAML</span>
+                        <span class="chip">WPF / XAML</span>
                     </div>
                 </div>
 
                 <div class="skill-group">
-                    <span class="skill-label">Infrastructure & Tools</span>
+                    <span class="skill-label">Infrastruktur & Verktyg</span>
                     <div class="skill-chips">
                         <span class="chip">Azure Cloud</span>
                         <span class="chip">Git/GitHub</span>
                         <span class="chip">Active Directory</span>
-                        <span class="chip">ITSM</span>
+                        <span class="chip">ITSM / Jira</span>
                     </div>
                 </div>
             </div>
 
             <div class="sidebar-section">
-                <h2>Certifications</h2>
+                <h2>Certifikat</h2>
                 <ul style="list-style: none; padding: 0;">
                     <li style="margin-bottom: 8px; color: #fff; opacity: 0.8; padding-left: 0;">&bull; Google IT Security</li>
-                    <li style="margin-bottom: 8px; color: #fff; opacity: 0.8; padding-left: 0;">&bull; Google Tech Support Fundamentals</li>
+                    <li style="margin-bottom: 8px; color: #fff; opacity: 0.8; padding-left: 0;">&bull; Google Tech Support</li>
                     <li style="margin-bottom: 8px; color: #fff; opacity: 0.8; padding-left: 0;">&bull; Web Development Foundations</li>
                 </ul>
             </div>
 
             <div class="sidebar-section">
-                <h2>Languages</h2>
-                <p style="color: #fff; opacity: 0.8; margin-bottom: 4px;"><strong>Swedish:</strong> Native</p>
-                <p style="color: #fff; opacity: 0.8;"><strong>English:</strong> Professional</p>
+                <h2>Språk</h2>
+                <p style="color: #fff; opacity: 0.8; margin-bottom: 4px;"><strong>Svenska:</strong> Modersmål</p>
+                <p style="color: #fff; opacity: 0.8;"><strong>Engelska:</strong> Professionell</p>
             </div>
         </aside>
 
@@ -324,30 +302,30 @@
             </header>
 
             <section>
-                <h2>Summary</h2>
-                <p>Transitioning Developer currently pursuing specialized education in .NET and Cloud Development at IT-Högskolan. Brings over 8 years of professional IT experience in Service Desk and Desktop Support environments for major global corporations (Capgemini, Tech Mahindra). Proven track record of diagnosing complex technical issues and optimizing workflows.</p>
+                <h2>Om mig</h2>
+                <p>Efter drygt åtta år i frontlinjen på globala IT-avdelningar har jag utvecklat en djup förståelse för hur teknik faktiskt används i vardagen. Jag har löst tusentals problem för användare på bolag som Capgemini, men nu tar jag steget från att supporta mjukvara till att faktiskt bygga den. Jag drivs av att gå från att fixa symptom till att skapa lösningarna från grunden.</p>
             </section>
 
             <section>
-                <h2>Education</h2>
+                <h2>Utbildning</h2>
                 
                 <div class="job-block">
                     <div class="job-header">
                         <h3>IT-Högskolan</h3>
-                        <span class="date">Aug 2025 – Present</span>
+                        <span class="date">Aug 2025 – Pågående</span>
                     </div>
-                    <p style="font-style: italic; color: #64748b;">Student, .NET Cloud Development</p>
-                    <p>Focusing on backend development, cloud architecture, and database management. Relevant Coursework: OOP, Database Design, Azure, Agile/Scrum.</p>
+                    <p style="font-style: italic; color: #64748b;">.NET Cloud Development</p>
+                    <p>Fokus på backend-utveckling, molnarkitektur och databashantering. Kurser inkluderar: OOP, Database Design, Azure och Agile/Scrum.</p>
                     
                     <div style="margin-top: 15px; border-left: 3px solid var(--chip-bg); padding-left: 15px;">
-                        <h3 style="margin-top: 0; font-size: 12px; text-transform: uppercase; color: var(--accent);">Key Academic Projects</h3>
+                        <h3 style="margin-top: 0; font-size: 12px; text-transform: uppercase; color: var(--accent);">Utvalda Projekt</h3>
                         
                         <div style="margin-bottom: 12px;">
                             <strong>Bookstore Admin Database</strong>
                             <div class="tech-stack">
                                 <span>C#</span> <span>Entity Framework</span> <span>SQL</span>
                             </div>
-                            <p>Developed a console-based administrative tool implementing full CRUD capabilities to manage inventory and sales data.</p>
+                            <p>Ett administrativt verktyg där jag fokuserade på att skapa en logisk SQL-struktur för att hantera lager och försäljningsdata via full CRUD-funktionalitet.</p>
                         </div>
 
                         <div style="margin-bottom: 12px;">
@@ -355,7 +333,7 @@
                             <div class="tech-stack">
                                 <span>WPF</span> <span>XAML</span> <span>C#</span>
                             </div>
-                            <p>Designed a desktop application with custom logic for score tracking, question randomization, and user event handling.</p>
+                            <p>Designade en desktop-applikation med anpassad logik för poängräkning, slumpmässiga frågor och händelsestyrd programmering.</p>
                         </div>
 
                         <div>
@@ -363,26 +341,25 @@
                             <div class="tech-stack">
                                 <span>C#</span> <span>OOP</span>
                             </div>
-                            <p>Created a text-based game demonstrating mastery of Object-Oriented Programming, inheritance, and polymorphism.</p>
+                            <p>Ett textbaserat spel för att bemästra objektorienterad programmering, med fokus på arv och polymorfism.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section>
-                <h2>Professional Experience</h2>
+                <h2>Arbetslivserfarenhet</h2>
 
                 <div class="job-block">
                     <div class="job-header">
                         <h3>Senior Desktop Support Analyst</h3>
                         <span class="date">Aug 2019 – Aug 2025</span>
                     </div>
-                    <p class="company">Capgemini | Gothenburg, Sweden</p>
+                    <p class="company">Capgemini | Göteborg</p>
                     <ul>
-                        <li>Provided Tier 2/3 technical support for a large-scale enterprise environment, resolving complex hardware/software issues.</li>
-                        <li>Managed the lifecycle of IT incidents, consistently maintaining high Service Level Agreement (SLA) adherence.</li>
-                        <li>Assisted in the onboarding of new employees by configuring hardware and managing Active Directory access.</li>
-                        <li>Acted as a senior resource for junior analysts, providing mentorship on troubleshooting methodologies.</li>
+                        <li>Ansvarade för Tier 2/3-support i storskaliga enterprizemiljöer med fokus på komplexa hård- och mjukvarufel.</li>
+                        <li>Mentor för nyanställda analytiker där jag utbildade i felsökningsmetodik och interna system.</li>
+                        <li>Säkerställde hög SLA-efterlevnad och hanterade livscykeln för kritiska IT-incidenter.</li>
                     </ul>
                 </div>
 
@@ -391,22 +368,22 @@
                         <h3>Service Desk Analyst</h3>
                         <span class="date">Jun 2017 – Aug 2019</span>
                     </div>
-                    <p class="company">Tech Mahindra | Budapest, Hungary</p>
+                    <p class="company">Tech Mahindra | Budapest, Ungern</p>
                     <ul>
-                        <li>Served as the first point of contact for technical support, triaging high volumes of user tickets.</li>
-                        <li>Diagnosed and resolved incidents related to Windows OS, MS Office Suite, and proprietary enterprise applications.</li>
-                        <li>Collaborated with remote IT teams to escalate and resolve critical infrastructure outages.</li>
+                        <li>Första kontaktpunkt för teknisk support; hanterade och prioriterade stora volymer av ärenden globalt.</li>
+                        <li>Felsökning av Windows OS, MS Office-paketet och verksamhetsspecifika applikationer.</li>
+                        <li>Tätt samarbete med infrastrukturteam för att eskalera och lösa kritiska driftstörningar.</li>
                     </ul>
                 </div>
                 
                 <div class="job-block" style="margin-top: 20px;">
                      <div class="job-header">
-                        <h3>Producer</h3>
-                        <span class="date">May 2012 – Oct 2014</span>
+                        <h3>Producent</h3>
+                        <span class="date">Maj 2012 – Okt 2014</span>
                     </div>
-                    <p class="company">Karl Katt AB | Gothenburg, Sweden</p>
+                    <p class="company">Karl Katt AB | Göteborg</p>
                     <ul>
-                        <li>Produced and edited the feature film "Motiv," managing project timelines, logistics, and creative outputs.</li>
+                        <li>Producerade och klippte långfilmen "Motiv". Ansvarade för projektledningsprocessen, logistik och att driva ett kreativt projekt i mål under press.</li>
                     </ul>
                 </div>
             </section>
