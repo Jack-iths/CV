@@ -10,20 +10,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@300;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* --- NYTT FÄRGSCHEMA: Årets Färg & Soft Tech --- */
         :root {
-            --bg-body: #F0EEE9;      /* Årets färg som bas */
-            --bg-sidebar: #2D2D2A;   /* Mjuk svart/grå för kontrast */
+            --bg-body: #F0EEE9;
+            --bg-sidebar: #2D2D2A;
             --text-main: #333333;
             --text-sidebar: #F0EEE9;
-            --accent: #D4A373;       /* Dämpad guld/jord-ton */
+            --accent: #D4A373;
             --accent-dark: #A98467;
             --chip-bg: #E7E5E0;
             --chip-text: #6B705C;
             --line-color: #E0DDD5;
         }
 
-        /* --- RESET --- */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -33,15 +31,13 @@
         }
 
         body {
-            background-color: #D6D3CC; /* Bakgrund utanför arket */
+            background-color: #D6D3CC;
             font-family: 'Inter', sans-serif;
-            font-size: 14px;
-            line-height: 1.6;
+            font-size: 13px; /* Komprimerad basstorlek */
+            line-height: 1.45;
             color: var(--text-main);
             display: flex;
             justify-content: center;
-            padding: 0;
-            margin: 0;
         }
 
         .page {
@@ -58,159 +54,104 @@
             width: 100%;
             background-color: var(--bg-sidebar);
             color: var(--text-sidebar);
-            padding: 30px 25px;
-            position: relative;
+            padding: 20px 25px;
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 15px;
         }
 
-        /* Topp-stripe med mjukare gradient */
         aside::before {
             content: "";
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 6px;
+            top: 0; left: 0; width: 100%; height: 4px;
             background: linear-gradient(90deg, var(--accent), #ADC178);
         }
 
         main {
             width: 100%;
-            padding: 30px 25px;
+            padding: 20px 30px;
             background-color: var(--bg-body);
         }
 
-        /* --- TYPOGRAPHY --- */
         h1 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
-            font-size: 32px;
+            font-size: 28px;
             color: var(--bg-sidebar);
-            line-height: 1.1;
-            margin-bottom: 5px;
-            letter-spacing: -0.5px;
+            margin-bottom: 2px;
         }
 
         h2 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 16px;
+            font-size: 14px;
             text-transform: uppercase;
-            letter-spacing: 1.2px;
             color: var(--accent-dark);
-            margin-bottom: 15px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
             gap: 8px;
-            border-bottom: 2px solid var(--line-color);
-            padding-bottom: 5px;
-            margin-top: 25px;
+            border-bottom: 1px solid var(--line-color);
+            padding-bottom: 3px;
+            margin-top: 15px;
         }
         
         h2::before {
             content: " "; display: inline-block;
-            width: 8px; height: 8px;
+            width: 6px; height: 6px;
             background-color: var(--accent);
-            border-radius: 2px; /* Mer kvadratisk för modern look */
+            border-radius: 1px;
         }
 
         h3 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 15px;
+            font-size: 13px;
             color: var(--bg-sidebar);
-            margin-top: 15px;
-            margin-bottom: 2px;
+            margin-top: 6px;
         }
 
         .role-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            font-weight: 300; /* Tunnare för elegans */
+            font-size: 12px;
+            font-weight: 400;
             color: var(--accent-dark);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
         }
 
-        p { margin-bottom: 10px; opacity: 0.9; }
+        p { margin-bottom: 5px; }
         a { color: var(--accent); text-decoration: none; font-weight: 600; }
-        aside a { color: var(--bg-body); opacity: 0.9; }
+        aside a { color: var(--bg-body); }
 
-        /* --- ELEMENTS --- */
-        .contact-info div {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 13px;
-        }
-        .contact-info svg { width: 16px; height: 16px; fill: var(--accent); }
+        .contact-info div { margin-bottom: 6px; font-size: 12px; display: flex; align-items: center; gap: 10px; }
+        .contact-info svg { width: 14px; height: 14px; fill: var(--accent); }
 
-        .sidebar-section h2 {
-            color: var(--bg-body); border-bottom: 1px solid rgba(255,255,255,0.1);
-            margin-top: 0;
-        }
+        .skill-group { margin-bottom: 10px; }
+        .skill-label { font-weight: 600; color: var(--accent); font-size: 10px; text-transform: uppercase; margin-bottom: 4px; display: block; }
+        .skill-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+        .chip { background: rgba(255,255,255,0.05); color: var(--bg-body); padding: 2px 8px; border-radius: 3px; font-size: 10px; border: 1px solid rgba(255,255,255,0.1); }
 
-        .skill-group { margin-bottom: 20px; }
-        .skill-label {
-            font-weight: 600; color: var(--accent);
-            margin-bottom: 8px; display: block;
-            font-size: 11px; text-transform: uppercase;
-        }
-        .skill-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-        .chip {
-            background: rgba(255,255,255,0.05);
-            color: var(--bg-body); padding: 4px 10px;
-            border-radius: 4px; font-size: 11px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .job-header {
-            display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;
-        }
-        .date {
-            font-size: 11px; color: var(--accent-dark); font-weight: 600; text-align: right;
-            text-transform: uppercase;
-        }
+        .job-header { display: flex; justify-content: space-between; align-items: baseline; }
+        .date { font-size: 10px; color: var(--accent-dark); font-weight: 600; }
         
-        ul { list-style: none; margin-left: 0; }
-        li {
-            position: relative; padding-left: 18px; margin-bottom: 6px; color: var(--text-main);
-        }
-        li::before {
-            content: "—"; position: absolute; left: 0;
-            color: var(--accent); font-weight: bold;
-        }
+        ul { list-style: none; margin-bottom: 8px; }
+        li { position: relative; padding-left: 15px; margin-bottom: 2px; }
+        li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
 
-        .tech-stack { display: flex; gap: 6px; margin-top: 5px; margin-bottom: 10px; flex-wrap: wrap; }
-        .tech-stack span {
-            background-color: var(--chip-bg); color: var(--chip-text);
-            font-size: 10px; font-weight: 700; padding: 3px 8px;
-            border-radius: 4px; font-family: 'Montserrat', sans-serif;
-        }
+        .tech-stack { display: flex; gap: 5px; margin-top: 3px; margin-bottom: 5px; }
+        .tech-stack span { background-color: var(--chip-bg); color: var(--chip-text); font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 3px; }
 
-        /* --- DESKTOP VIEW --- */
         @media screen and (min-width: 850px) {
-            body { padding: 40px; }
-            .page {
-                width: 210mm;
-                min-height: 297mm;
-                flex-direction: row;
-                box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-            }
-            aside { width: 30%; padding: 40px 25px; }
-            main { width: 70%; padding: 40px 45px; }
-            body { font-size: 11px; }
-            h1 { font-size: 42px; }
-            h2 { font-size: 14px; }
+            .page { width: 210mm; height: 297mm; flex-direction: row; }
+            aside { width: 28%; padding: 30px 20px; }
+            main { width: 72%; padding: 25px 35px; }
         }
 
         @media print {
-            body { background: none; padding: 0; font-size: 11px; }
-            .page { width: 210mm; min-height: 297mm; display: flex !important; flex-direction: row !important; box-shadow: none; margin: 0; }
-            aside { width: 30%; padding: 40px 25px; background-color: #2D2D2A !important; }
-            main { width: 70%; padding: 40px 45px; background-color: #F0EEE9 !important; }
-            a { text-decoration: none; }
+            body { background: none; }
+            .page { width: 210mm; height: 280mm; display: flex !important; flex-direction: row !important; box-shadow: none; }
+            html, body { height: 297mm; overflow: hidden; }
         }
     </style>
 </head>
@@ -220,77 +161,47 @@
         <aside>
             <div class="contact-section">
                 <div class="contact-info">
-                    <div>
-                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        <a href="mailto:Jack.reveny@iths.se">Revenue@live.se</a>
-                    </div>
-                    <div>
-                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                        +46 72-901 59 65
-                    </div>
-                    <div>
-                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                        Göteborg
-                    </div>
+                    <div><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:Revenue@live.se">Revenue@live.se</a></div>
+                    <div><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>+46 72-901 59 65</div>
+                    <div><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Göteborg</div>
                 </div>
 
-                <div style="margin-top: 25px;">
+                <div style="margin-top: 15px;">
                     <div class="contact-info">
-                        <div>
-                            <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-                            <a href="https://linkedin.com/in/jackrevenue" target="_blank">in/jackrevenue</a>
-                        </div>
-                        <div>
-                            <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
-                            <a href="https://github.com/Jack-iths" target="_blank">github.com/Jack-iths</a>
-                        </div>
+                        <div><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg><a href="https://linkedin.com/in/jackrevenue">in/jackrevenue</a></div>
+                        <div><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg><a href="https://github.com/Jack-iths">github.com/Jack-iths</a></div>
                     </div>
                 </div>
             </div>
 
             <div class="sidebar-section">
                 <h2>Färdigheter</h2>
-                
                 <div class="skill-group">
                     <span class="skill-label">Språk & Data</span>
                     <div class="skill-chips">
-                        <span class="chip">C#</span> <span class="chip">SQL</span>
-                        <span class="chip">MongoDB</span> <span class="chip">HTML5/CSS3</span>
-                        <span class="chip">JavaScript</span>
+                        <span class="chip">C#</span> <span class="chip">SQL</span> <span class="chip">MongoDB</span> <span class="chip">JavaScript</span> <span class="chip">HTML/CSS</span>
                     </div>
                 </div>
-
                 <div class="skill-group">
-                    <span class="skill-label">Ramverk & Koncept</span>
+                    <span class="skill-label">Ramverk & Verktyg</span>
                     <div class="skill-chips">
-                        <span class="chip">.NET Core</span> <span class="chip">ASP.NET</span>
-                        <span class="chip">REST APIs</span> <span class="chip">Entity Framework</span>
-                        <span class="chip">WPF / XAML</span>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <span class="skill-label">Infrastruktur</span>
-                    <div class="skill-chips">
-                        <span class="chip">Azure Cloud</span> <span class="chip">Git/GitHub</span>
-                        <span class="chip">Active Directory</span> <span class="chip">ITSM / Jira</span>
+                        <span class="chip">.NET Core</span> <span class="chip">ASP.NET</span> <span class="chip">REST APIs</span> <span class="chip">Entity Framework</span> <span class="chip">Azure</span> <span class="chip">Git</span>
                     </div>
                 </div>
             </div>
 
             <div class="sidebar-section">
                 <h2>Certifikat</h2>
-                <ul style="list-style: none; padding: 0; font-size: 11px;">
-                    <li style="margin-bottom: 8px; color: var(--bg-body); opacity: 0.8; padding-left: 0;">&bull; Google IT Security</li>
-                    <li style="margin-bottom: 8px; color: var(--bg-body); opacity: 0.8; padding-left: 0;">&bull; Google Tech Support</li>
-                    <li style="margin-bottom: 8px; color: var(--bg-body); opacity: 0.8; padding-left: 0;">&bull; Web Development Foundations</li>
+                <ul style="font-size: 10px;">
+                    <li>Google IT Security</li>
+                    <li>Google Tech Support</li>
+                    <li>Web Dev Foundations</li>
                 </ul>
             </div>
 
             <div class="sidebar-section">
                 <h2>Språk</h2>
-                <p style="color: var(--bg-body); opacity: 0.8; margin-bottom: 4px; font-size: 12px;"><strong>Svenska:</strong> Modersmål</p>
-                <p style="color: var(--bg-body); opacity: 0.8; font-size: 12px;"><strong>Engelska:</strong> Professionell</p>
+                <p style="font-size: 11px;"><strong>Svenska:</strong> Modersmål<br><strong>Engelska:</strong> Professionell</p>
             </div>
         </aside>
 
@@ -302,32 +213,24 @@
 
             <section>
                 <h2>Om mig</h2>
-                <p>Efter drygt åtta år i frontlinjen på globala IT-avdelningar har jag utvecklat en djup förståelse för hur teknik faktiskt används i vardagen. Jag har löst tusentals problem för användare på bolag som Capgemini, men nu tar jag steget från att supporta mjukvara till att faktiskt bygga den. Jag drivs av att gå från att fixa symptom till att skapa lösningarna från grunden.</p>
+                <p>Efter åtta år inom global IT-support tar jag nu steget till utveckling. Jag kombinerar djup förståelse för användarbehov och infrastruktur med modern backend-utveckling i .NET och Azure.</p>
             </section>
 
             <section>
                 <h2>Utbildning</h2>
                 <div class="job-block">
-                    <div class="job-header">
-                        <h3>IT-Högskolan</h3>
-                        <span class="date">Aug 2025 – Pågående</span>
-                    </div>
-                    <p style="font-style: italic; color: var(--accent-dark); font-weight: 600;">.NET Cloud Development</p>
-                    <p>Fokus på backend-utveckling, molnarkitektur och databashantering. Kurser inkluderar: OOP, Database Design, Azure och Agile/Scrum.</p>
-                    
-                    <div style="margin-top: 15px; border-left: 3px solid var(--accent); padding-left: 15px;">
-                        <h3 style="margin-top: 0; font-size: 11px; text-transform: uppercase; color: var(--accent-dark); letter-spacing: 1px;">Utvalda Projekt</h3>
-                        
-                        <div style="margin-bottom: 12px;">
+                    <div class="job-header"><h3>IT-Högskolan</h3><span class="date">Aug 2025 – Pågående</span></div>
+                    <p style="font-style: italic; color: var(--accent-dark);">.NET Cloud Development</p>
+                    <div style="margin-top: 5px; border-left: 2px solid var(--accent); padding-left: 10px;">
+                        <div style="margin-bottom: 5px;">
                             <strong>Bookstore Admin Database</strong>
                             <div class="tech-stack"><span>C#</span> <span>EF Core</span> <span>SQL</span></div>
-                            <p>Ett administrativt verktyg med fokus på logisk SQL-struktur för att hantera lager och försäljningsdata.</p>
+                            <p>Byggde en administrativ lagerlösning med fokus på databasarkitektur.</p>
                         </div>
-
-                        <div style="margin-bottom: 12px;">
+                        <div>
                             <strong>Interactive Quiz App</strong>
                             <div class="tech-stack"><span>WPF</span> <span>XAML</span> <span>C#</span></div>
-                            <p>Desktop-applikation med anpassad logik för poängräkning och händelsestyrd programmering.</p>
+                            <p>Desktop-app med fokus på händelsestyrd logik och UI-design.</p>
                         </div>
                     </div>
                 </div>
@@ -335,41 +238,29 @@
 
             <section>
                 <h2>Arbetslivserfarenhet</h2>
-
                 <div class="job-block">
-                    <div class="job-header">
-                        <h3>Senior Desktop Support Analyst</h3>
-                        <span class="date">Aug 2019 – Aug 2025</span>
-                    </div>
+                    <div class="job-header"><h3>Senior Desktop Support Analyst</h3><span class="date">2019 – 2025</span></div>
                     <p style="color: var(--accent-dark); font-weight: 600;">Capgemini | Göteborg</p>
                     <ul>
-                        <li>Hjälpte först till när supporten bytte företag och förde över KB artiklar och lärde de nya managerna hur supporten var uppbyggd.</li>
-                        <li>Sedan ansvarade för Tier 2/3-support med fokus på komplexa hård- och mjukvarufel åt återförsäljare till ett stort bilföretag.</li>
-                        <li>Mentor för nyanställda analytiker där jag utbildade i felsökningsmetodik och interna system.</li>
-                        <li>Säkerställde hög SLA-efterlevnad och hanterade kritiska IT-incidenter.</li>
+                        <li>Ledde överlämningen vid leverantörsbyte; ansvarade för KB-artiklar och onboarding av nya managers.</li>
+                        <li>Tier 2/3-support för komplexa IT-miljöer hos återförsäljare inom bilindustrin.</li>
+                        <li>Mentor för juniora tekniker inom felsökningsmetodik och systemstöd.</li>
                     </ul>
                 </div>
 
-                <div class="job-block" style="margin-top: 20px;">
-                    <div class="job-header">
-                        <h3>Service Desk Analyst</h3>
-                        <span class="date">Jun 2017 – Aug 2019</span>
-                    </div>
+                <div class="job-block">
+                    <div class="job-header"><h3>Service Desk Analyst</h3><span class="date">2017 – 2019</span></div>
                     <p style="color: var(--accent-dark); font-weight: 600;">Tech Mahindra | Budapest, Ungern</p>
                     <ul>
-                        <li>Första kontaktpunkt för teknisk support; hanterade stora volymer av ärenden globalt.</li>
-                        <li>Felsökning av Windows OS, MS Office-paketet och verksamhetsspecifika applikationer.</li>
+                        <li>Triage och felsökning av globala incidenter i Windows-miljöer.</li>
                     </ul>
                 </div>
                 
-                <div class="job-block" style="margin-top: 20px;">
-                     <div class="job-header">
-                        <h3>Producent</h3>
-                        <span class="date">Maj 2012 – Okt 2014</span>
-                    </div>
+                <div class="job-block">
+                    <div class="job-header"><h3>Producent</h3><span class="date">2012 – 2014</span></div>
                     <p style="color: var(--accent-dark); font-weight: 600;">Karl Katt AB | Göteborg</p>
                     <ul>
-                        <li>Producerade och klippte långfilmen "Motiv". Ansvarade för projektledning, logistik och att driva ett kreativt projekt i mål under press.</li>
+                        <li>Ansvarade för projektledning och logistik vid produktionen av långfilmen "Motiv".</li>
                     </ul>
                 </div>
             </section>
@@ -378,4 +269,3 @@
 
 </body>
 </html>
-
