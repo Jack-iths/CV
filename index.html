@@ -7,19 +7,20 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@300;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* --- VARIABLES --- */
+        /* --- NYTT FÄRGSCHEMA: Årets Färg & Soft Tech --- */
         :root {
-            --bg-body: #F3F4F6;
-            --bg-sidebar: #0f172a;
-            --text-main: #334155;
-            --text-sidebar: #e2e8f0;
-            --accent: #0ea5e9;
-            --accent-dark: #0284c7;
-            --chip-bg: #e0f2fe;
-            --chip-text: #0369a1;
+            --bg-body: #F0EEE9;      /* Årets färg som bas */
+            --bg-sidebar: #2D2D2A;   /* Mjuk svart/grå för kontrast */
+            --text-main: #333333;
+            --text-sidebar: #F0EEE9;
+            --accent: #D4A373;       /* Dämpad guld/jord-ton */
+            --accent-dark: #A98467;
+            --chip-bg: #E7E5E0;
+            --chip-text: #6B705C;
+            --line-color: #E0DDD5;
         }
 
         /* --- RESET --- */
@@ -32,7 +33,7 @@
         }
 
         body {
-            background-color: #555;
+            background-color: #D6D3CC; /* Bakgrund utanför arket */
             font-family: 'Inter', sans-serif;
             font-size: 14px;
             line-height: 1.6;
@@ -44,7 +45,7 @@
         }
 
         .page {
-            background: white;
+            background: var(--bg-body);
             width: 100%;
             max-width: 800px;
             min-height: 100vh;
@@ -64,24 +65,26 @@
             gap: 25px;
         }
 
+        /* Topp-stripe med mjukare gradient */
         aside::before {
             content: "";
             position: absolute;
             top: 0; left: 0; width: 100%; height: 6px;
-            background: linear-gradient(90deg, var(--accent), #6366f1);
+            background: linear-gradient(90deg, var(--accent), #ADC178);
         }
 
         main {
             width: 100%;
             padding: 30px 25px;
-            background-color: #ffffff;
+            background-color: var(--bg-body);
         }
 
+        /* --- TYPOGRAPHY --- */
         h1 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
             font-size: 32px;
-            color: var(--text-main);
+            color: var(--bg-sidebar);
             line-height: 1.1;
             margin-bottom: 5px;
             letter-spacing: -0.5px;
@@ -98,7 +101,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            border-bottom: 2px solid #f1f5f9;
+            border-bottom: 2px solid var(--line-color);
             padding-bottom: 5px;
             margin-top: 25px;
         }
@@ -107,14 +110,14 @@
             content: " "; display: inline-block;
             width: 8px; height: 8px;
             background-color: var(--accent);
-            border-radius: 50%;
+            border-radius: 2px; /* Mer kvadratisk för modern look */
         }
 
         h3 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             font-size: 15px;
-            color: #1e293b;
+            color: var(--bg-sidebar);
             margin-top: 15px;
             margin-bottom: 2px;
         }
@@ -122,89 +125,91 @@
         .role-title {
             font-family: 'Montserrat', sans-serif;
             font-size: 14px;
-            font-weight: 600;
-            color: var(--accent);
+            font-weight: 300; /* Tunnare för elegans */
+            color: var(--accent-dark);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             margin-bottom: 20px;
         }
 
-        p { margin-bottom: 10px; }
+        p { margin-bottom: 10px; opacity: 0.9; }
         a { color: var(--accent); text-decoration: none; font-weight: 600; }
-        aside a { color: #fff; opacity: 0.9; }
+        aside a { color: var(--bg-body); opacity: 0.9; }
 
+        /* --- ELEMENTS --- */
         .contact-info div {
             margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 10px;
+            font-size: 13px;
         }
         .contact-info svg { width: 16px; height: 16px; fill: var(--accent); }
 
         .sidebar-section h2 {
-            color: #fff; border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: var(--bg-body); border-bottom: 1px solid rgba(255,255,255,0.1);
             margin-top: 0;
         }
 
         .skill-group { margin-bottom: 20px; }
         .skill-label {
             font-weight: 600; color: var(--accent);
-            margin-bottom: 5px; display: block;
+            margin-bottom: 8px; display: block;
             font-size: 11px; text-transform: uppercase;
         }
         .skill-chips { display: flex; flex-wrap: wrap; gap: 8px; }
         .chip {
-            background: rgba(255,255,255,0.1);
-            color: #fff; padding: 4px 10px;
+            background: rgba(255,255,255,0.05);
+            color: var(--bg-body); padding: 4px 10px;
             border-radius: 4px; font-size: 11px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .job-header {
             display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;
         }
         .date {
-            font-size: 12px; color: #64748b; font-weight: 600; text-align: right;
+            font-size: 11px; color: var(--accent-dark); font-weight: 600; text-align: right;
+            text-transform: uppercase;
         }
         
         ul { list-style: none; margin-left: 0; }
         li {
-            position: relative; padding-left: 18px; margin-bottom: 6px; color: #475569;
+            position: relative; padding-left: 18px; margin-bottom: 6px; color: var(--text-main);
         }
         li::before {
-            content: "›"; position: absolute; left: 0;
-            color: var(--accent); font-weight: bold; font-size: 16px; line-height: 14px;
+            content: "—"; position: absolute; left: 0;
+            color: var(--accent); font-weight: bold;
         }
 
         .tech-stack { display: flex; gap: 6px; margin-top: 5px; margin-bottom: 10px; flex-wrap: wrap; }
         .tech-stack span {
             background-color: var(--chip-bg); color: var(--chip-text);
-            font-size: 10px; font-weight: 600; padding: 3px 8px;
+            font-size: 10px; font-weight: 700; padding: 3px 8px;
             border-radius: 4px; font-family: 'Montserrat', sans-serif;
         }
 
+        /* --- DESKTOP VIEW --- */
         @media screen and (min-width: 850px) {
             body { padding: 40px; }
             .page {
                 width: 210mm;
                 min-height: 297mm;
                 flex-direction: row;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                box-shadow: 0 20px 50px rgba(0,0,0,0.15);
             }
             aside { width: 30%; padding: 40px 25px; }
-            main { width: 70%; padding: 40px 35px; }
+            main { width: 70%; padding: 40px 45px; }
             body { font-size: 11px; }
-            h1 { font-size: 36px; }
+            h1 { font-size: 42px; }
             h2 { font-size: 14px; }
-            .date { font-size: 10px; }
-            .chip { font-size: 10px; }
         }
 
         @media print {
             body { background: none; padding: 0; font-size: 11px; }
             .page { width: 210mm; min-height: 297mm; display: flex !important; flex-direction: row !important; box-shadow: none; margin: 0; }
-            aside { width: 30%; padding: 40px 25px; }
-            main { width: 70%; padding: 40px 35px; }
+            aside { width: 30%; padding: 40px 25px; background-color: #2D2D2A !important; }
+            main { width: 70%; padding: 40px 45px; background-color: #F0EEE9 !important; }
             a { text-decoration: none; }
         }
     </style>
@@ -244,15 +249,13 @@
             </div>
 
             <div class="sidebar-section">
-                <h2>Tekniska Färdigheter</h2>
+                <h2>Färdigheter</h2>
                 
                 <div class="skill-group">
                     <span class="skill-label">Språk & Data</span>
                     <div class="skill-chips">
-                        <span class="chip">C#</span>
-                        <span class="chip">SQL</span>
-                        <span class="chip">MongoDB</span>
-                        <span class="chip">HTML5/CSS3</span>
+                        <span class="chip">C#</span> <span class="chip">SQL</span>
+                        <span class="chip">MongoDB</span> <span class="chip">HTML5/CSS3</span>
                         <span class="chip">JavaScript</span>
                     </div>
                 </div>
@@ -260,38 +263,34 @@
                 <div class="skill-group">
                     <span class="skill-label">Ramverk & Koncept</span>
                     <div class="skill-chips">
-                        <span class="chip">.NET Core</span>
-                        <span class="chip">ASP.NET</span>
-                        <span class="chip">REST APIs</span>
-                        <span class="chip">Entity Framework</span>
+                        <span class="chip">.NET Core</span> <span class="chip">ASP.NET</span>
+                        <span class="chip">REST APIs</span> <span class="chip">Entity Framework</span>
                         <span class="chip">WPF / XAML</span>
                     </div>
                 </div>
 
                 <div class="skill-group">
-                    <span class="skill-label">Infrastruktur & Verktyg</span>
+                    <span class="skill-label">Infrastruktur</span>
                     <div class="skill-chips">
-                        <span class="chip">Azure Cloud</span>
-                        <span class="chip">Git/GitHub</span>
-                        <span class="chip">Active Directory</span>
-                        <span class="chip">ITSM / Jira</span>
+                        <span class="chip">Azure Cloud</span> <span class="chip">Git/GitHub</span>
+                        <span class="chip">Active Directory</span> <span class="chip">ITSM / Jira</span>
                     </div>
                 </div>
             </div>
 
             <div class="sidebar-section">
                 <h2>Certifikat</h2>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 8px; color: #fff; opacity: 0.8; padding-left: 0;">&bull; Google IT Security</li>
-                    <li style="margin-bottom: 8px; color: #fff; opacity: 0.8; padding-left: 0;">&bull; Google Tech Support</li>
-                    <li style="margin-bottom: 8px; color: #fff; opacity: 0.8; padding-left: 0;">&bull; Web Development Foundations</li>
+                <ul style="list-style: none; padding: 0; font-size: 11px;">
+                    <li style="margin-bottom: 8px; color: var(--bg-body); opacity: 0.8; padding-left: 0;">&bull; Google IT Security</li>
+                    <li style="margin-bottom: 8px; color: var(--bg-body); opacity: 0.8; padding-left: 0;">&bull; Google Tech Support</li>
+                    <li style="margin-bottom: 8px; color: var(--bg-body); opacity: 0.8; padding-left: 0;">&bull; Web Development Foundations</li>
                 </ul>
             </div>
 
             <div class="sidebar-section">
                 <h2>Språk</h2>
-                <p style="color: #fff; opacity: 0.8; margin-bottom: 4px;"><strong>Svenska:</strong> Modersmål</p>
-                <p style="color: #fff; opacity: 0.8;"><strong>Engelska:</strong> Professionell</p>
+                <p style="color: var(--bg-body); opacity: 0.8; margin-bottom: 4px; font-size: 12px;"><strong>Svenska:</strong> Modersmål</p>
+                <p style="color: var(--bg-body); opacity: 0.8; font-size: 12px;"><strong>Engelska:</strong> Professionell</p>
             </div>
         </aside>
 
@@ -308,40 +307,27 @@
 
             <section>
                 <h2>Utbildning</h2>
-                
                 <div class="job-block">
                     <div class="job-header">
                         <h3>IT-Högskolan</h3>
                         <span class="date">Aug 2025 – Pågående</span>
                     </div>
-                    <p style="font-style: italic; color: #64748b;">.NET Cloud Development</p>
+                    <p style="font-style: italic; color: var(--accent-dark); font-weight: 600;">.NET Cloud Development</p>
                     <p>Fokus på backend-utveckling, molnarkitektur och databashantering. Kurser inkluderar: OOP, Database Design, Azure och Agile/Scrum.</p>
                     
-                    <div style="margin-top: 15px; border-left: 3px solid var(--chip-bg); padding-left: 15px;">
-                        <h3 style="margin-top: 0; font-size: 12px; text-transform: uppercase; color: var(--accent);">Utvalda Projekt</h3>
+                    <div style="margin-top: 15px; border-left: 3px solid var(--accent); padding-left: 15px;">
+                        <h3 style="margin-top: 0; font-size: 11px; text-transform: uppercase; color: var(--accent-dark); letter-spacing: 1px;">Utvalda Projekt</h3>
                         
                         <div style="margin-bottom: 12px;">
                             <strong>Bookstore Admin Database</strong>
-                            <div class="tech-stack">
-                                <span>C#</span> <span>Entity Framework</span> <span>SQL</span>
-                            </div>
-                            <p>Ett administrativt verktyg där jag fokuserade på att skapa en logisk SQL-struktur för att hantera lager och försäljningsdata via full CRUD-funktionalitet.</p>
+                            <div class="tech-stack"><span>C#</span> <span>EF Core</span> <span>SQL</span></div>
+                            <p>Ett administrativt verktyg med fokus på logisk SQL-struktur för att hantera lager och försäljningsdata.</p>
                         </div>
 
                         <div style="margin-bottom: 12px;">
                             <strong>Interactive Quiz App</strong>
-                            <div class="tech-stack">
-                                <span>WPF</span> <span>XAML</span> <span>C#</span>
-                            </div>
-                            <p>Designade en desktop-applikation med anpassad logik för poängräkning, slumpmässiga frågor och händelsestyrd programmering.</p>
-                        </div>
-
-                        <div>
-                            <strong>Console RPG</strong>
-                            <div class="tech-stack">
-                                <span>C#</span> <span>OOP</span>
-                            </div>
-                            <p>Ett textbaserat spel för att bemästra objektorienterad programmering, med fokus på arv och polymorfism.</p>
+                            <div class="tech-stack"><span>WPF</span> <span>XAML</span> <span>C#</span></div>
+                            <p>Desktop-applikation med anpassad logik för poängräkning och händelsestyrd programmering.</p>
                         </div>
                     </div>
                 </div>
@@ -355,11 +341,12 @@
                         <h3>Senior Desktop Support Analyst</h3>
                         <span class="date">Aug 2019 – Aug 2025</span>
                     </div>
-                    <p class="company">Capgemini | Göteborg</p>
+                    <p style="color: var(--accent-dark); font-weight: 600;">Capgemini | Göteborg</p>
                     <ul>
-                        <li>Ansvarade för Tier 2/3-support i storskaliga enterprizemiljöer med fokus på komplexa hård- och mjukvarufel.</li>
+                        <li>Hjälpte först till när supporten bytte företag och förde över KB artiklar och lärde de nya managerna hur supporten var uppbyggd.</li>
+                        <li>Sedan ansvarade för Tier 2/3-support med fokus på komplexa hård- och mjukvarufel åt återförsäljare till ett stort bilföretag.</li>
                         <li>Mentor för nyanställda analytiker där jag utbildade i felsökningsmetodik och interna system.</li>
-                        <li>Säkerställde hög SLA-efterlevnad och hanterade livscykeln för kritiska IT-incidenter.</li>
+                        <li>Säkerställde hög SLA-efterlevnad och hanterade kritiska IT-incidenter.</li>
                     </ul>
                 </div>
 
@@ -368,11 +355,10 @@
                         <h3>Service Desk Analyst</h3>
                         <span class="date">Jun 2017 – Aug 2019</span>
                     </div>
-                    <p class="company">Tech Mahindra | Budapest, Ungern</p>
+                    <p style="color: var(--accent-dark); font-weight: 600;">Tech Mahindra | Budapest, Ungern</p>
                     <ul>
-                        <li>Första kontaktpunkt för teknisk support; hanterade och prioriterade stora volymer av ärenden globalt.</li>
+                        <li>Första kontaktpunkt för teknisk support; hanterade stora volymer av ärenden globalt.</li>
                         <li>Felsökning av Windows OS, MS Office-paketet och verksamhetsspecifika applikationer.</li>
-                        <li>Tätt samarbete med infrastrukturteam för att eskalera och lösa kritiska driftstörningar.</li>
                     </ul>
                 </div>
                 
@@ -381,13 +367,12 @@
                         <h3>Producent</h3>
                         <span class="date">Maj 2012 – Okt 2014</span>
                     </div>
-                    <p class="company">Karl Katt AB | Göteborg</p>
+                    <p style="color: var(--accent-dark); font-weight: 600;">Karl Katt AB | Göteborg</p>
                     <ul>
-                        <li>Producerade och klippte långfilmen "Motiv". Ansvarade för projektledningsprocessen, logistik och att driva ett kreativt projekt i mål under press.</li>
+                        <li>Producerade och klippte långfilmen "Motiv". Ansvarade för projektledning, logistik och att driva ett kreativt projekt i mål under press.</li>
                     </ul>
                 </div>
             </section>
-
         </main>
     </div>
 
